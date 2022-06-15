@@ -7,4 +7,5 @@ export const Images = {
   user: require('./img_user.png'),
   menu: require('./img_menu.png'),
   notification: require('./img_notification.png'),
+  comment: require('./img_my_query_comment.png'),
 };

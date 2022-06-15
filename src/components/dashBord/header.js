@@ -19,11 +19,6 @@ export const Header = () =>{
           <Image style={styles.imageNotification} source={Images.notification} />
         </View>
     </View>
-      <View style={styles.container}>
-        <Text >
-          My Location
-        </Text>
-      </View>
     </View>
   );
 };
@@ -85,18 +80,6 @@ const styles = StyleSheet.create({
     width: 12,
     height: 12,
     alignSelf: 'center',
-  },
-  container: {
-    borderRadius:10,
-    width:100,
-    height:40,
-    justifyContent: "center",
-
-    backgroundColor: COLORS.white
-  },
-  txtMyLocation: {
-    fontFamily: Fonts.medium,
-    justifyContent: "center",
   },
 });
 
