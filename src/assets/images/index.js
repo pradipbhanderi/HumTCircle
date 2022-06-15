@@ -8,4 +8,6 @@ export const Images = {
   menu: require('./img_menu.png'),
   notification: require('./img_notification.png'),
   comment: require('./img_my_query_comment.png'),
+  oval: require('./img_oval.png'),
+  photo: require('./img_photo.png'),
 };
