@@ -1,18 +1,20 @@
 import React from "react";
-import { Text, View,StyleSheet } from "react-native";
+import { Text, View, StyleSheet, Pressable, Image } from "react-native";
 import { COLORS } from "../../theme/colos";
 import { Fonts } from "../../theme/fonts";
 
-export const TabLayout = ({label}) => {
+export const TabLayout = ({label,click,isSelect}) => {
   return(
-    <View style={styles.mainContainer}>
+    <Pressable onPress={click} style={styles.mainContainer}>
+      {isSelect && (
+        <Text></Text>
+      )}
       <View style={styles.container}>
         <Text style={styles.txtMyLocation} >
           {label}
         </Text>
       </View>
-    </View>
-
+    </Pressable>
   );
 };
 

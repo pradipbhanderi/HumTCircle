@@ -1,3 +1,4 @@
+
 export const Images = {
   splash: require('./img_splash_logo.png'),
   arrowLeft: require('./img_arrow_left.png'),
@@ -10,4 +11,10 @@ export const Images = {
   comment: require('./img_my_query_comment.png'),
   oval: require('./img_oval.png'),
   photo: require('./img_photo.png'),
+  like: require('./img_like_selected.png'),
+  report: require('./img_report.png'),
+  feed: require('./img_Feed.png'),
+  profile: require('./img_profile.png'),
+  plus: require('./img_plus.png'),
+
 };
