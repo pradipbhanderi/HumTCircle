@@ -1,3 +1,4 @@
+import { re } from "@babel/core/lib/vendor/import-meta-resolve";
 
 export const Images = {
   splash: require('./img_splash_logo.png'),
@@ -16,5 +17,10 @@ export const Images = {
   feed: require('./img_Feed.png'),
   profile: require('./img_profile.png'),
   plus: require('./img_plus.png'),
+  backArrow: require('./back_arrow.png'),
+  flag: require('./img_flag.png'),
+  flags: require ('./img_flags.png'),
+  region: require('./img_region.png'),
+  city: require('./img_city.png')
 
 };

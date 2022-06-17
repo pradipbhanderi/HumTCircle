@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Text, View, StyleSheet, Image } from "react-native";
+import { Text, View, StyleSheet, Image, Pressable } from "react-native";
 import { Images } from "../assets/images";
 import { COLORS } from "../theme/colos";
 import { Fonts } from "../theme/fonts";
@@ -11,6 +11,8 @@ import { PostCell } from "../components/dashBord/post/postCell";
 import { BottomBar } from "../components/dashBord/bottomBar";
 import { PostList } from "../components/dashBord/post/postList";
 import { useNavigation } from "@react-navigation/native";
+import { Commands } from "react-native/Libraries/Components/View/ViewNativeComponent";
+import { Comment} from "./comment";
 
 const Tab = [
   {
@@ -24,6 +26,7 @@ const Tab = [
 
 export const DashBord = () => {
   const [label, setLabel] = useState(false);
+  const navigation = useNavigation();
   return(
     <View style={styles.mainContainer}>
       <Header />
@@ -48,9 +51,11 @@ export const DashBord = () => {
       })}
 
       <MyQueries IsMyQueries={true}  />
-      <View style={styles.postContainer}>
+
+      <Pressable style={styles.postContainer} onPress={() => {
+        navigation.navigate('comment') }} >
         <PostList />
-      </View>
+      </Pressable>
 
       <BottomBar />
 

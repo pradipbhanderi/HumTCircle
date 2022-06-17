@@ -4,17 +4,28 @@ import { Images } from "../../../assets/images";
 import { Fonts } from "../../../theme/fonts";
 import { COLORS } from "../../../theme/colos";
 
-export const Post = () => {
+export const Post = ({IsImages,image,message}) => {
   return (
-    <View >
-      <Text style={styles.txtMessage}>Living in today’s metropolitan world of cellular hones, mobile computers and other high-tech gadgets is not #Trending #Dance #Light</Text>
+    <View>
+      {
+        IsImages?
+          <View >
+            <Text style={styles.txtMessage}>{message}</Text>
 
-      <View style={styles.imageContainer}>
-        <Image style={styles.image} source={Images.photo} />
-      </View>
+            <View style={styles.imageContainer}>
+              <Image style={styles.image} source={image} />
+            </View>
 
-      <View style={styles.border}/>
+            <View style={styles.border}/>
+          </View>
+        :
+          <View >
+            <Text style={styles.txtMessage}>{message}</Text>
+            <View style={styles.border}/>
+          </View>
+      }
     </View>
+
   );
 };
 

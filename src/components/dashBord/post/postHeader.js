@@ -4,7 +4,7 @@ import { Images } from "../../../assets/images";
 import { Fonts } from "../../../theme/fonts";
 import { COLORS } from "../../../theme/colos";
 
-export const PostHeader = () => {
+export const PostHeader = ({name,uploadTime,messageCount}) => {
   return (
     <View style={styles.container} >
 
@@ -13,11 +13,11 @@ export const PostHeader = () => {
       </View>
 
       <View style={styles.containerName}>
-        <Text style={styles.txtName}>John Doe</Text>
+        <Text style={styles.txtName}>{name}</Text>
         <View style={styles.containerMessageCircle}>
-          <Text style={styles.txtMessageCount}>1</Text>
+          <Text style={styles.txtMessageCount}>{messageCount}</Text>
         </View>
-        <Text style={styles.txtUploadTime}>1 hours ago</Text>
+        <Text style={styles.txtUploadTime}>{uploadTime}</Text>
       </View>
 
     </View>

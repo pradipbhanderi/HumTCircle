@@ -1,20 +1,24 @@
 import React from "react";
-import { Image, StyleSheet, Text, View } from "react-native";
+import { Image, Pressable, StyleSheet, Text, View } from "react-native";
 import { Images } from "../../assets/images";
 import { COLORS } from "../../theme/colos";
 import { Fonts } from "../../theme/fonts";
+import { useNavigation } from "@react-navigation/native";
 
 export const Header = () =>{
+  const navigation = useNavigation();
   return (
     <View style={styles.mainContainer}>
       <View style={styles.headerContainer}>
         <View style={styles.menuContainer}>
           <Image style={styles.imageMenu} source={Images.menu} />
         </View>
-        <View style={styles.containerLocation}>
-          <Text style={styles.txtLocationDropdown}> Location</Text>
-          <Text style={styles.txtLocation}>New Jersey(North) </Text>
-        </View>
+        <Pressable  style={styles.containerLocation} onPress={()=>{
+            navigation.navigate('location')
+        }}>
+            <Text style={styles.txtLocationDropdown}> Location</Text>
+            <Text style={styles.txtLocation}>New Jersey(North) </Text>
+        </Pressable>
         <View style={styles.notificationContainer}>
           <Image style={styles.imageNotification} source={Images.notification} />
         </View>

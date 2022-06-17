@@ -4,6 +4,7 @@ import { COLORS } from "../theme/colos";
 import { Images } from "../assets/images";
 import { Fonts } from "../theme/fonts";
 import { useNavigation } from "@react-navigation/native";
+import { InputText } from "../components/common/inputText";
 
 export const Phone = () => {
   const navigation = useNavigation();
@@ -18,18 +19,12 @@ export const Phone = () => {
       </View>
       <View style={styles.bottomContainer}>
         <View style={{height:100}}/>
-        <View>
 
-          <View style={styles.inputTextContainer}>
-            <Image style={styles.imagePhone} source={Images.phone} />
-            <TextInput style={styles.inputText} placeholder={'123 456 7890'}
-                       keyboardType={"numeric"} maxLength={10}
-            />
-          </View>
-          <View style={styles.containerPhone}>
-            <Text style={styles.txtPhone}>Phone NO</Text>
-          </View>
-        </View>
+          <InputText label={'Phone NO'}
+                     image={Images.phone}
+                     placeholder={'123 456 7890'}
+                     maxLength={10}
+                     keyboardType={'numeric'} />
 
         <Text style={styles.otpMessage}>An OTP will be sent to your number </Text>
         <View style={styles.sendOtpContainer}>
@@ -89,17 +84,6 @@ const styles = StyleSheet.create({
     backgroundColor: COLORS.white,
     flexDirection: 'column',
   },
-  containerPhone: {
-    backgroundColor: COLORS.white,
-    height:20,
-    top:-10,
-    marginStart: 55,
-    position:"absolute"
-  },
-  txtPhone: {
-    fontSize: 12,
-    fontFamily: Fonts.medium,
-  },
   inputTextContainer: {
     borderRadius: 10,
     borderStyle: 'solid',
@@ -109,14 +93,6 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     borderColor: COLORS.gray,
     marginHorizontal: 40,
-
-  },
-  imagePhone: {
-    marginStart: 10,
-  },
-  inputText: {
-    marginStart: 10,
-    color: COLORS.black,
   },
   otpMessage: {
     fontFamily: Fonts.medium,

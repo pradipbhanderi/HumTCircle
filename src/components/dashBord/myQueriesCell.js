@@ -4,27 +4,53 @@ import { COLORS } from "../../theme/colos";
 import { Fonts } from "../../theme/fonts";
 import { Images } from "../../assets/images";
 
-export const MyQueriesCell = () => {
+export const MyQueriesCell = ({IsWidth}) => {
   return(
     <View>
-      <View style={styles.container}>
+      {
+        IsWidth ?
+          <View style={styles.container}>
 
-        <Text style={styles.txtQueriesMessage}>Lorem Ipsum Dolor Sit Amet, Consectetur {'\n'} Adipiscing Elit. Vestibulum...</Text>
+            <Text style={styles.txtQueriesMessage}>Lorem Ipsum Dolor Sit Amet, Consectetur  Adipiscing Elit. Vestibulum...</Text>
 
-        <View style={styles.containerMessage}>
+            <View style={styles.containerMessage}>
 
-          <Image style={styles.imageComment} source={Images.comment} />
-          <Text style={styles.txtCommentCount}>41</Text>
+              <Image style={styles.imageComment} source={Images.comment} />
+              <Text style={styles.txtCommentCount}>41</Text>
 
-        </View>
+            </View>
 
-      </View>
+          </View>
+          :
+          <View style={styles.container2}>
+
+            <Text style={styles.txtQueriesMessage}>Lorem Ipsum Dolor Sit Amet, Consectetur {'\n'} Adipiscing Elit. Vestibulum...</Text>
+
+            <View style={styles.containerMessage}>
+
+              <Image style={styles.imageComment} source={Images.comment} />
+              <Text style={styles.txtCommentCount}>41</Text>
+
+            </View>
+
+          </View>
+      }
+
     </View>
   );
 };
 
 const styles = StyleSheet.create({
   container: {
+    flexDirection: "column",
+    borderRadius: 15,
+    backgroundColor: COLORS.white,
+    height: 100,
+    width: 250,
+    marginStart: 20,
+    marginTop: 20,
+  },
+  container2: {
     flexDirection: "column",
     borderRadius: 15,
     backgroundColor: COLORS.white,

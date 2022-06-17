@@ -20,15 +20,7 @@ export const MyQueries = ({ IsMyQueries }) => {
             </Pressable>
 
           </View>
-          :
-          <View style={styles.queriesContainer}>
-            <Text style={styles.txtQueries}>My Queries</Text>
-            <Pressable onPress={() => {
-              navigation.navigate('myQueriesScreen') }}>
-              <Text style={styles.txtView}>View all</Text>
-            </Pressable>
-
-          </View>
+          : null
 
       }
 
@@ -47,7 +39,7 @@ export const MyQueries = ({ IsMyQueries }) => {
                 ]}
                 horizontal
                 renderItem={({ item, index }) => (
-                  <MyQueriesCell />
+                  <MyQueriesCell IsWidth={true} />
                 )}
               />
             </ScrollView>
@@ -62,7 +54,7 @@ export const MyQueries = ({ IsMyQueries }) => {
                   { key: "Java" },
                 ]}
                 renderItem={({ item, index }) => (
-                  <MyQueriesCell />
+                  <MyQueriesCell IsWidth={false} />
                 )}
               />
             </View>

@@ -14,7 +14,7 @@ export const PostFooter = () => {
          <Text style={styles.commentNumber}> 41 </Text>
          <Image style={styles.imageReport} source={Images.report} />
 
-      <Text style={styles.txtUploadTime}> 1 Day Left</Text>
+          <Text style={styles.txtUploadTime}> 1 Day Left</Text>
 
     </View>
   );

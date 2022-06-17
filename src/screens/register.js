@@ -5,6 +5,8 @@ import { COLORS } from "../theme/colos";
 import { Fonts } from "../theme/fonts";
 import { Dropdown } from "react-native-element-dropdown";
 import { useNavigation } from "@react-navigation/native";
+import { InputText } from "../components/common/inputText";
+import { Dropdowns } from "../components/common/dropdown";
 
 
 const data = [
@@ -33,93 +35,23 @@ export const Register = () => {
         <Text style={styles.txtRegisterMes}>Register to join the HumT community</Text>
       </View>
       <View style={styles.bottomContainer}>
-        <View style={styles.containerPhone}>
-          <Text style={styles.txtUser}>user Name</Text>
+
+        <View style={styles.containerInputText}>
+
+          <InputText keyboardType={"default"}
+                     maxLength={50}
+                     placeholder={'User Nme'}
+                     image={Images.user}
+                     label={'User Name'} />
         </View>
-        <View style={styles.inputTextContainer}>
-          <Image style={styles.imageUser} source={Images.user} />
-          <TextInput style={styles.inputText} placeholder={'User Name'} />
-        </View>
-        <Text style={styles.txtCountry}>Country</Text>
-        <View style={styles.containerDropdownCountry}>
-          <Dropdown
-            placeholderStyle={styles.placeholderStyle}
-            selectedTextStyle={styles.selectedTextStyle}
-            inputSearchStyle={styles.inputSearchStyle}
-            maxHeight={300}
-            data={data}
-            labelField="label"
-            valueField="value"
-            placeholder={!isFocus ? 'Select item' : '...'}
-            searchPlaceholder="Search..."
-            value={value}
-            onFocus={() => setIsFocus(true)}
-            onBlur={() => setIsFocus(false)}
-            onChange={item => {
-              setValue(item.value);
-              setIsFocus(false);
-            }} />
-        </View>
-        <Text style={styles.txtState}>State</Text>
-        <View style={styles.containerDropdownState}>
-          <Dropdown
-            placeholderStyle={styles.placeholderStyle}
-            selectedTextStyle={styles.selectedTextStyle}
-            inputSearchStyle={styles.inputSearchStyle}
-            maxHeight={300}
-            data={data}
-            labelField="label"
-            valueField="value"
-            placeholder={!isFocus ? 'Select item' : '...'}
-            searchPlaceholder="Search..."
-            value={value}
-            onFocus={() => setIsFocus(true)}
-            onBlur={() => setIsFocus(false)}
-            onChange={item => {
-              setValue(item.value);
-              setIsFocus(false);
-            }} />
-        </View>
-        <Text style={styles.txtCity}>City</Text>
-        <View style={styles.containerDropdownCity}>
-          <Dropdown
-            placeholderStyle={styles.placeholderStyle}
-            selectedTextStyle={styles.selectedTextStyle}
-            inputSearchStyle={styles.inputSearchStyle}
-            maxHeight={300}
-            data={data}
-            labelField="label"
-            valueField="value"
-            placeholder={!isFocus ? 'Select item' : '...'}
-            searchPlaceholder="Search..."
-            value={value}
-            onFocus={() => setIsFocus(true)}
-            onBlur={() => setIsFocus(false)}
-            onChange={item => {
-              setValue(item.value);
-              setIsFocus(false);
-            }} />
-        </View>
-        <Text style={styles.txtRegion}>Region</Text>
-        <View style={styles.containerDropdownRegion}>
-          <Dropdown
-            placeholderStyle={styles.placeholderStyle}
-            selectedTextStyle={styles.selectedTextStyle}
-            inputSearchStyle={styles.inputSearchStyle}
-            maxHeight={300}
-            data={data}
-            labelField="label"
-            valueField="value"
-            placeholder={!isFocus ? 'Select item' : '...'}
-            searchPlaceholder="Search..."
-            value={value}
-            onFocus={() => setIsFocus(true)}
-            onBlur={() => setIsFocus(false)}
-            onChange={item => {
-              setValue(item.value);
-              setIsFocus(false);
-            }} />
-        </View>
+
+        <Dropdowns label={'Country'} data={data} height={300} image={Images.flags}  />
+        <Dropdowns label={'State'} data={data} height={300} image={Images.flag}  />
+        <Dropdowns label={'State'} data={data} height={300} image={Images.city}  />
+        <Dropdowns label={'Region'} data={data} height={300} image={Images.region}  />
+
+
+
         <View style={styles.sendOtpContainer}>
           <View>
             <Text>I agree to terms & conditions</Text>
@@ -188,92 +120,8 @@ const styles = StyleSheet.create({
     backgroundColor: COLORS.white,
     flexDirection: 'column',
   },
-  containerPhone: {
-    backgroundColor: COLORS.white,
-    width: 100,
-    height:20,
-    marginTop: 10,
-    marginStart: 55,
-  },
-  txtUser: {
-    fontSize: 12,
-    fontFamily: Fonts.medium,
-  },
-  inputTextContainer: {
-    borderRadius: 10,
-    borderStyle: 'solid',
-    borderWidth: 1,
-    alignItems: 'center',
-    flexDirection: 'row',
-    borderColor: COLORS.gray,
-    marginHorizontal: 40,
-  },
-  imageUser: {
-    marginStart: 10,
-  },
-  inputText: {
-    marginStart: 10,
-    color: COLORS.black,
-  },
-  txtCountry: {
-    fontSize: 12,
-    marginStart:50,
-    marginTop:10,
-    fontFamily: Fonts.medium,
-  },
-  containerDropdownCountry: {
-    height: 50,
-    borderColor: 'gray',
-    borderWidth: 0.5,
-    borderRadius: 8,
-    justifyContent: 'center',
-    marginHorizontal: 40,
-    paddingHorizontal: 8,
-  },
-  containerDropdownState: {
-    height: 50,
-    borderColor: 'gray',
-    borderWidth: 0.5,
-    borderRadius: 8,
-    justifyContent: 'center',
-    marginHorizontal: 40,
-    paddingHorizontal: 8,
-  },
-  txtState: {
-    fontSize: 12,
-    marginStart:50,
-    marginTop:10,
-    fontFamily: Fonts.medium,
-  },
-  containerDropdownCity: {
-    height: 50,
-    borderColor: 'gray',
-    borderWidth: 0.5,
-    borderRadius: 8,
-    justifyContent: 'center',
-    marginHorizontal: 40,
-    paddingHorizontal: 8,
-  },
-  txtCity: {
-    fontSize: 12,
-    marginStart:50,
-    marginTop:10,
-    fontFamily: Fonts.medium,
-  },
-  containerDropdownRegion: {
-    height: 50,
-    borderColor: 'gray',
-    borderWidth: 0.5,
-    borderRadius: 8,
-    justifyContent: 'center',
-    marginHorizontal: 40,
-    paddingHorizontal: 8,
-  },
-  txtRegion: {
-    fontSize: 12,
-    marginStart:50,
-    marginTop:10,
-    fontFamily: Fonts.medium,
+  containerInputText: {
+    marginTop: 30,
   },
   sendOtpContainer: {
     marginStart:50,
@@ -287,8 +135,8 @@ const styles = StyleSheet.create({
 
   },
   imageWatermarks: {
-    marginTop: 40,
-    top: -80,
+    marginTop: 30,
+    top: -50,
     alignSelf: 'center',
   },
 });

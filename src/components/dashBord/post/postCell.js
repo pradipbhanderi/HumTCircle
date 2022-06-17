@@ -13,9 +13,9 @@ export const PostCell = () => {
 
       <View style={styles.postContainer}>
 
-         <PostHeader />
+         <PostHeader messageCount={2} name={'John Doe'} uploadTime={'1 hours ago'} />
 
-        <Post />
+        <Post IsImages={true} image={Images.photo} message={'Living in today’s metropolitan world of cellular hones, mobile computers and other high-tech gadgets is not #Trending #Dance #Light'} />
         <View style={styles.footerContainer}>
           <PostFooter />
         </View>
