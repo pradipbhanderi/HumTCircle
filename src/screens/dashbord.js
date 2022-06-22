@@ -54,9 +54,9 @@ export const DashBord = () => {
 
       <Pressable style={styles.postContainer} onPress={() => {
         navigation.navigate('comment') }} >
-        <PostList />
-      </Pressable>
 
+      </Pressable>
+      <PostList />
       <BottomBar />
 
     </View>

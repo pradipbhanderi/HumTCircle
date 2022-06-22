@@ -17,7 +17,7 @@ export const PostCell = () => {
 
         <Post IsImages={true} image={Images.photo} message={'Living in today’s metropolitan world of cellular hones, mobile computers and other high-tech gadgets is not #Trending #Dance #Light'} />
         <View style={styles.footerContainer}>
-          <PostFooter />
+          <PostFooter IsPost={true} likeCount={250} commentCount={45} time={'1 Day Left'}/>
         </View>
 
 
@@ -47,7 +47,5 @@ const styles = StyleSheet.create({
   footerContainer: {
     flexDirection: 'row',
   },
-
-
 
 });

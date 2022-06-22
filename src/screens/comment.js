@@ -18,7 +18,7 @@ export const Comment = () => {
 
         <Post IsImages={false} message={'Living in today’s metropolitan world of cellular hones, mobile computers and other high-tech gadgets is not #Trending #Dance #Light'} />
         <View style={styles.footerContainer}>
-          <PostFooter />
+          <PostFooter IsPost={false} likeCount={250} commentCount={45} time={'1 Day Left'} />
         </View>
 
       </View>

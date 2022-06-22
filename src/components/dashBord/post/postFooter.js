@@ -4,19 +4,33 @@ import { Images } from "../../../assets/images";
 import { Fonts } from "../../../theme/fonts";
 import { COLORS } from "../../../theme/colos";
 
-export const PostFooter = () => {
+export const PostFooter = ({IsPost,likeCount,commentCount,time}) => {
   return(
-    <View style={styles.mainContainer}>
 
-         <Image style={styles.imageLike} source={Images.like} />
-         <Text style={styles.likeNumber}> 250 </Text>
-         <Image style={styles.imageLike} source={Images.comment} />
-         <Text style={styles.commentNumber}> 41 </Text>
-         <Image style={styles.imageReport} source={Images.report} />
-
-          <Text style={styles.txtUploadTime}> 1 Day Left</Text>
-
+    <View>
+      {
+        IsPost ?
+          <View style={styles.mainContainer}>
+              <Image style={styles.imageLike} source={Images.like} />
+              <Text style={styles.likeNumber}>{likeCount} </Text>
+              <Image style={styles.imageLike} source={Images.comment} />
+              <Text style={styles.commentNumber}>{commentCount} </Text>
+              <Image style={styles.imageReport} source={Images.report} />
+              <Text style={styles.txtUploadTime}>{time}</Text>
+          </View>
+        :
+          <View style={styles.mainContainer}>
+              <Image style={styles.imageLike} source={Images.like} />
+              <Text style={styles.likeNumber}>{likeCount} </Text>
+              <Image style={styles.imageLike} source={Images.comment} />
+              <Text style={styles.commentNumber}>{commentCount} </Text>
+              <Image style={styles.imageReport} source={Images.report} />
+              <Text style={styles.txtUploadTime}>{time}</Text>
+          </View>
+      }
     </View>
+
+
   );
 };
 
